@@ -512,18 +512,18 @@ target_link_libraries(tutorial17_rotations
 set_target_properties(tutorial17_rotations PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tutorial17_rotations/")
 create_target_launcher(tutorial17_rotations WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tutorial17_rotations/")
 
-# User playground
-add_executable(playground 
-	playground/playground.cpp
+# User TwoDRender
+add_executable(TwoDRender 
+	TwoDRender/TwoDRender.cpp
 	common/shader.cpp
 	common/shader.hpp
 )
-target_link_libraries(playground
+target_link_libraries(TwoDRender
 	${ALL_LIBS}
 )
 # Xcode and Visual working directories
-set_target_properties(playground PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/playground/")
-create_target_launcher(playground WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/playground/")
+set_target_properties(TwoDRender PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/TwoDRender/")
+create_target_launcher(TwoDRender WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/TwoDRender/")
 
 
 
@@ -753,8 +753,8 @@ add_custom_command(
    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/tutorial18_particles${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tutorial18_billboards_and_particles/"
 )
 add_custom_command(
-   TARGET playground POST_BUILD
-   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/playground${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/playground/"
+   TARGET TwoDRender POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/TwoDRender${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/TwoDRender/"
 )
 add_custom_command(
    TARGET misc05_picking_slow_easy POST_BUILD
